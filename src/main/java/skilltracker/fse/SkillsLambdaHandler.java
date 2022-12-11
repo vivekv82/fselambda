@@ -21,6 +21,7 @@ public class SkillsLambdaHandler implements RequestStreamHandler {
 	static {
 		try {
 			handler = SpringBootLambdaContainerHandler.getAwsProxyHandler(SkillsTrackerApp.class);
+			System.out.println("SkillsLambdaHandler is ready");
 		} catch (ContainerInitializationException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Could not initialize Spring Boot application", e);
@@ -29,6 +30,9 @@ public class SkillsLambdaHandler implements RequestStreamHandler {
 
 	@Override
 	public void handleRequest(InputStream input, OutputStream output, Context context) throws IOException {
+		System.out.println("SkillsLambdaHandler handleRequest called for input " + input.toString() + "\n" + output.toString() + "\n");
+		System.out.println("SkillsLambdaHandler handleRequest context " + context.getFunctionName() + " " + context.toString());
+		System.out.println("SkillsLambdaHandler handleRequest context " + context.getFunctionName() + " " + context.toString());
 		handler.proxyStream(input, output, context);
 	}
 
