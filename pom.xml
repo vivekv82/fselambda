@@ -121,7 +121,7 @@
 			<version>${rest.assured.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- Active MQ 
+		<!-- Active MQ -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-activemq</artifactId>
@@ -131,7 +131,7 @@
 			<artifactId>activemq-camel</artifactId>
 		</dependency>
 
-	    Active MQ -->
+		<!-- Active MQ -->
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -156,6 +156,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<classifier>exec</classifier>
+				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>org.springframework.boot.experimental</groupId>

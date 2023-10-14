@@ -27,7 +27,7 @@ public class SkillProfile implements Serializable {
 
 	private List<Expertise> skillsList;
 	
-	public SkillProfile(String firstName, String lastName, String associateId, String email, String mobile, List<SkillsExpertise> list) {
+	public SkillProfile(String firstName, String lastName, String associateId, String email, String mobile, List<SkillsExpertise> list, List<SkillsExpertise> softSkillsList) {
 		this.associateId = associateId;
 		this.firstName = firstName;
 		this.lastName = lastName;

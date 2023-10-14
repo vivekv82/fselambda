@@ -1,7 +1,9 @@
 package skilltracker.fse.dto;
 
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
@@ -48,7 +50,11 @@ public class EngineerSkillProfile implements Serializable {
 	
 	@NotNull
 	@Valid
-	private List<SkillsExpertise> skillsList;
+	private List<SkillsExpertise> technicalSkillsList;
+	
+	@NotNull
+	@Valid
+	private List<SkillsExpertise> softSkillsList;
 
 	public String getFirstName() {
 		return firstName;
@@ -89,17 +95,31 @@ public class EngineerSkillProfile implements Serializable {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
-	public List<SkillsExpertise> getSkillsList() {
-		return skillsList;
-	}
-
-	public void setSkillsList(List<SkillsExpertise> skillsList) {
-		this.skillsList = skillsList;
-	}
 	
+	public List<SkillsExpertise> getTechnicalSkillsList() {
+		return technicalSkillsList;
+	}
+
+	public void setTechnicalSkillsList(List<SkillsExpertise> technicalSkillsList) {
+		this.technicalSkillsList = technicalSkillsList;
+	}
+
+	public List<SkillsExpertise> getSoftSkillsList() {
+		return softSkillsList;
+	}
+
+	public void setSoftSkillsList(List<SkillsExpertise> softSkillsList) {
+		this.softSkillsList = softSkillsList;
+	}
+
 	public String toString() {
 		return this.associateId;
+	}
+	
+	public void sortSkillsExpertise() {
+		Comparator<SkillsExpertise> comparator = Comparator.comparing(SkillsExpertise::getSkillExpertiseLevel);
+		this.technicalSkillsList = this.technicalSkillsList.stream().sorted(comparator).collect(Collectors.toList());
+		this.softSkillsList = this.softSkillsList.stream().sorted(comparator).collect(Collectors.toList());
 	}
 
 }
