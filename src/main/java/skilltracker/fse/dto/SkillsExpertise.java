@@ -14,14 +14,8 @@ import lombok.experimental.Builder;
 public class SkillsExpertise implements Serializable {
 
 	private static final long serialVersionUID = -1264756693651108391L;
-	
-	//@NotNull
-	//@NotBlank
 	private String skillName;
 	
-	//@NotNull
-	//@Min(value = 0)
-	//@Max(value = 20)
 	private Integer skillExpertiseLevel;
 	
 	public String getSkillName() {
