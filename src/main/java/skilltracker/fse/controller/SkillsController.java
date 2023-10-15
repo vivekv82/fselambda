@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,7 +26,7 @@ import skilltracker.fse.service.SkillsService;
 @RequestMapping("/api/v1/admin")
 public class SkillsController {
 
-		private SkillsService skillsService;
+	private SkillsService skillsService;
 
 	public SkillsService getSkillsService() {
 		return skillsService;
@@ -58,20 +57,20 @@ public class SkillsController {
 		List<SkillProfile> allProfileRecords = this.skillsService.fetchAllProfiles();
 		return new Result(allProfileRecords.toArray());
 	}
-	
+
 	@RequestMapping(value = "/fetchLoginProfile", method = RequestMethod.POST, headers = {
-	"content-type=application/json" }, consumes = {
-			MediaType.APPLICATION_JSON_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE })
+			"content-type=application/json" }, consumes = {
+					MediaType.APPLICATION_JSON_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE })
 	public Result fetchLoginProfile(@RequestBody SearchSkillProfile searchProfile) {
 		SkillProfile profile = this.skillsService.fetchLoginProfile(searchProfile.getAssociateId());
 		if (profile != null) {
-			List <SkillProfile> skillprofile = new ArrayList<SkillProfile>();
+			List<SkillProfile> skillprofile = new ArrayList<SkillProfile>();
 			skillprofile.add(profile);
 			return new Result(skillprofile.toArray());
 		} else {
 			return new Result(-1, "No results found for ", "");
 		}
-		
+
 	}
 
 	@RequestMapping(value = "/addProfile", method = RequestMethod.POST, headers = {
