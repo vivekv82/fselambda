@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import skilltracker.fse.dto.SkillsExpertise;
 
-@Document(collection = "Skillprofile")
+@Document(collection = "FSESkillProfiles")
 public class SkillProfile implements Serializable {
 
 	private static final long serialVersionUID = 6220741624813720241L;
@@ -32,6 +32,8 @@ public class SkillProfile implements Serializable {
 	
 	private Date createdDate;
 	
+	private Date updatedDate;
+	
 	public SkillProfile(String firstName, String lastName, String associateId, String email, String mobile, List<SkillsExpertise> technicalSkillsList, List<SkillsExpertise> softSkillsList) {
 		this.associateId = associateId;
 		this.firstName = firstName;
@@ -43,7 +45,7 @@ public class SkillProfile implements Serializable {
 		this.createdDate = new Date();
 	}
 	
-	public SkillProfile(String firstName, String lastName, String associateId, String email, String mobile, List<SkillsExpertise> technicalSkillsList, List<SkillsExpertise> softSkillsList, Date createdDate) {
+	public SkillProfile(String firstName, String lastName, String associateId, String email, String mobile, List<SkillsExpertise> technicalSkillsList, List<SkillsExpertise> softSkillsList, Date createdDate, Date updatedDate) {
 		this.associateId = associateId;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -108,6 +110,14 @@ public class SkillProfile implements Serializable {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 
 	public List<Expertise> getTechnicalSkillsList() {

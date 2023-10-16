@@ -2,6 +2,7 @@ package skilltracker.fse.dto;
 
 import java.io.Serializable;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -55,6 +56,10 @@ public class EngineerSkillProfile implements Serializable {
 	@NotNull
 	@Valid
 	private List<SkillsExpertise> softSkillsList;
+	
+	private Date createdDate;
+	
+	private Date updatedDate;
 
 	public String getFirstName() {
 		return firstName;
@@ -110,6 +115,22 @@ public class EngineerSkillProfile implements Serializable {
 
 	public void setSoftSkillsList(List<SkillsExpertise> softSkillsList) {
 		this.softSkillsList = softSkillsList;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 
 	public String toString() {

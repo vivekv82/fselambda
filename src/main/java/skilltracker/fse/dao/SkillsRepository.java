@@ -49,10 +49,10 @@ public interface SkillsRepository extends MongoRepository<SkillProfile, String> 
 		return isNew
 				? new SkillProfile(profile.getFirstName(), profile.getLastName(), profile.getAssociateId(),
 						profile.getEmail(), profile.getMobile(), profile.getTechnicalSkillsList(),
-						profile.getSoftSkillsList(), new Date())
+						profile.getSoftSkillsList(), new Date(), new Date())
 				: new SkillProfile(profile.getFirstName(), profile.getLastName(), profile.getAssociateId(),
 						profile.getEmail(), profile.getMobile(), profile.getTechnicalSkillsList(),
-						profile.getSoftSkillsList());
+						profile.getSoftSkillsList(), profile.getCreatedDate(), new Date());
 	}
 
 }
