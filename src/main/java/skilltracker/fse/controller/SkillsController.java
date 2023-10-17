@@ -17,7 +17,7 @@ import skilltracker.fse.service.SkillsService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/v1/admin")
+@RequestMapping("/api/v1/engineer")
 public class SkillsController {
 
 	private SkillsService skillsService;
