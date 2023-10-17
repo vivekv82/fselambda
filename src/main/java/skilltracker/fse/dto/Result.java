@@ -8,7 +8,7 @@ import lombok.experimental.Builder;
 @Builder
 @Data
 public class Result implements Serializable {
-	
+
 	private static final long serialVersionUID = -2211832491775352290L;
 	private Integer result = 0;
 	private String errorMessage = "";
@@ -18,21 +18,25 @@ public class Result implements Serializable {
 	public Object[] getResposnse() {
 		return resposnse;
 	}
+
 	public void setResposnse(Object[] resposnse) {
 		this.resposnse = resposnse;
 	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
 	public Result(Object[] resposnse) {
 		this.resposnse = resposnse;
 	}
+
 	public Result(Integer result, String errorMessage, String errorCode) {
 		this.result = result;
 		this.errorMessage = errorMessage;
 		this.errorCode = errorCode;
 	}
-	
+
 	public Result(Integer result, String errorMessage, String errorCode, Object[] resposnse) {
 		this.result = result;
 		this.errorMessage = errorMessage;
@@ -43,9 +47,11 @@ public class Result implements Serializable {
 	public Integer getResult() {
 		return result;
 	}
+
 	public void setResult(Integer result) {
 		this.result = result;
 	}
+
 	public String getErrorMessage() {
 		return errorMessage;
 	}

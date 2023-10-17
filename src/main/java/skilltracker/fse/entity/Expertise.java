@@ -9,12 +9,11 @@ public class Expertise implements Serializable {
 	private String skillName;
 
 	private Integer skillExpertiseLevel;
-	
+
 	public Expertise(String skillName, Integer skillExpertiseLevel) {
 		this.skillName = skillName;
 		this.skillExpertiseLevel = skillExpertiseLevel;
 	}
-
 
 	public String getSkillName() {
 		return skillName;

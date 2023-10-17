@@ -28,7 +28,8 @@ public class EnableCache {
 
 	@Bean
 	JedisConnectionFactory jedisConnectionFactory() {
-		System.out.println("redisHostName, redisPort, redisPrefix = " + redisHostName + " " + redisPort + " " + redisPrefix);
+		System.out.println(
+				"redisHostName, redisPort, redisPrefix = " + redisHostName + " " + redisPort + " " + redisPrefix);
 		RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration(redisHostName,
 				redisPort);
 		return new JedisConnectionFactory(redisStandaloneConfiguration);

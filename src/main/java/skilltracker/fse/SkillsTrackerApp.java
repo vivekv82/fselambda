@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableAutoConfiguration
 public class SkillsTrackerApp {
-    
-    public static void main(String[] args) {
-        SpringApplication.run(SkillsTrackerApp.class, args);
-    }
-	
+
+	public static void main(String[] args) {
+		SpringApplication.run(SkillsTrackerApp.class, args);
+	}
+
 }

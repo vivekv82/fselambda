@@ -15,20 +15,23 @@ public class SkillsExpertise implements Serializable {
 
 	private static final long serialVersionUID = -1264756693651108391L;
 	private String skillName;
-	
+
 	private Integer skillExpertiseLevel;
-	
+
 	public String getSkillName() {
 		return skillName;
 	}
+
 	public void setSkillName(String skillName) {
 		this.skillName = skillName;
 	}
+
 	public Integer getSkillExpertiseLevel() {
 		return skillExpertiseLevel;
 	}
+
 	public void setSkillExpertiseLevel(Integer skillExpertiseLevel) {
 		this.skillExpertiseLevel = skillExpertiseLevel;
 	}
-	
+
 }

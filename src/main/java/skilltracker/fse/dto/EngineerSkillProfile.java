@@ -29,7 +29,7 @@ public class EngineerSkillProfile implements Serializable {
 	@NotNull
 	@Size(min = 5, max = 30)
 	private String firstName;
-	
+
 	@NotNull
 	@Size(min = 5, max = 30)
 	private String lastName;
@@ -43,22 +43,22 @@ public class EngineerSkillProfile implements Serializable {
 	@NotNull
 	@Size(min = 10, max = 10)
 	private String mobile;
-	
+
 	@NotNull
 	@Size(max = 40)
 	@Email(regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}", flags = Pattern.Flag.CASE_INSENSITIVE)
 	private String email;
-	
+
 	@NotNull
 	@Valid
 	private List<SkillsExpertise> technicalSkillsList;
-	
+
 	@NotNull
 	@Valid
 	private List<SkillsExpertise> softSkillsList;
-	
+
 	private Date createdDate;
-	
+
 	private Date updatedDate;
 
 	public String getFirstName() {
@@ -100,7 +100,7 @@ public class EngineerSkillProfile implements Serializable {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
+
 	public List<SkillsExpertise> getTechnicalSkillsList() {
 		return technicalSkillsList;
 	}
@@ -136,7 +136,7 @@ public class EngineerSkillProfile implements Serializable {
 	public String toString() {
 		return this.associateId;
 	}
-	
+
 	public void sortSkillsExpertise() {
 		Comparator<SkillsExpertise> comparator = Comparator.comparing(SkillsExpertise::getSkillExpertiseLevel);
 		this.technicalSkillsList = this.technicalSkillsList.stream().sorted(comparator).collect(Collectors.toList());
